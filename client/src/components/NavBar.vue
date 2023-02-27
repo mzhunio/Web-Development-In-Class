@@ -4,7 +4,7 @@ import { RouterLink } from 'vue-router';
     const isMenuActive = false;
 </script>
 <template>
-      <nav class="navbar is-primary">
+  <nav class="navbar is-primary">
     <div class="navbar-brand">
       <a class="navbar-item" href="https://bulma.io">
         <img alt="Vue logo" class="logo" width="22" height="22">
