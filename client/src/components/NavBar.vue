@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 ;import { RouterLink } from 'vue-router';
+import type LoginBadgeVue from './LoginBadge.vue';
 
     let isMenuActive = ref(false);
 
@@ -32,6 +33,7 @@ import { ref } from 'vue'
 
             <RouterLink to="/" class="navbar-item">Home</RouterLink>
             <RouterLink to="/about" class="navbar-item">About</RouterLink>
+            <RouterLink to="/products" class="navbar-item">Products</RouterLink>
 
 
             <div class="navbar-item has-dropdown is-hoverable">
@@ -66,6 +68,9 @@ import { ref } from 'vue'
           </div>
       
           <div class="navbar-end">
+            
+            <LoginBadgeVue/>
+
             <div class="navbar-item">
               <div class="field is-grouped">
                 <p class="control">
