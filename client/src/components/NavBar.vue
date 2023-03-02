@@ -1,6 +1,14 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router';
-    const isMenuActive = false;
+import { ref } from 'vue'
+;import { RouterLink } from 'vue-router';
+
+    let isMenuActive = ref(false);
+
+    function toggleMenu() {
+      isMenuActive.value = !isMenuActive.value;
+      console.log({isMenuActive});
+    }
+
 </script>
 
 <template>
@@ -12,7 +20,7 @@ import { RouterLink } from 'vue-router';
             <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="22" height="22" />
             
           </a>
-          <div class="navbar-burger" :class="{ 'is-active': isMenuActive }" @click="isMenuActive = !isMenuActive" >
+          <div class="navbar-burger" :class="{ 'is-active': isMenuActive }" @click="toggleMenu" >
             <span></span>
             <span></span>
             <span></span>
