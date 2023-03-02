@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useSession, login } from '@/model/sessions';
+
 const session = useSession();
+
 </script>
 
 <template>

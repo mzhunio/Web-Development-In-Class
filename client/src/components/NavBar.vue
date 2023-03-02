@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-;import { RouterLink } from 'vue-router';
-import type LoginBadgeVue from './LoginBadge.vue';
+import { ref } from 'vue';
+import { RouterLink } from 'vue-router';
+import LoginBadge from './LoginBadge.vue';
 
-    let isMenuActive = ref(false);
+    const isMenuActive = ref(false);
 
     function toggleMenu() {
       isMenuActive.value = !isMenuActive.value;
@@ -69,7 +69,7 @@ import type LoginBadgeVue from './LoginBadge.vue';
       
           <div class="navbar-end">
             
-            <LoginBadgeVue/>
+            <LoginBadge />
 
             <div class="navbar-item">
               <div class="field is-grouped">
