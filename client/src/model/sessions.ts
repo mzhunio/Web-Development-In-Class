@@ -1,6 +1,3 @@
-/*  B"H
-*/
-
 import { reactive } from "vue";
 
 const session = reactive({
@@ -21,6 +18,6 @@ export function useSession() {
 
 export function login() {
     session.user = {
-        name: "John Doe",
+        name: "Michelle Zhunio",
     }
 }
