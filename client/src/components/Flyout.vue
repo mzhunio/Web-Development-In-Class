@@ -20,6 +20,7 @@
         background-color: white;
         box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
         transition: right 0.5s ease-in-out;
+        overflow-y: scroll;
     }
     .flyout.active {
         right: 0;
