@@ -30,4 +30,11 @@ export function addToCart(product: Product) {
     }
 }
 
-export const total = computed(() => cart.value.reduce((total, item) => total + item.product.price * item.quantity));
+export function removeFromCart(index: number) {
+    cart.value.splice(index, 1);
+}
+
+export const quantity = computed(() => cart.value.reduce((total, item) => total + item.quantity, 0));
+
+export const total = computed(() => cart.value.reduce((total, item) => total + item.product.price * item.quantity, 0));
+

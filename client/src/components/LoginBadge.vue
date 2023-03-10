@@ -5,12 +5,17 @@ import { useSession, login, useLogout } from '@/model/sessions';
 const session = useSession();
 const logout = useLogout();
 
+
+function logout2() {
+    logout();
+}
+
 </script>
 
 <template>
             <div class="navbar-item" v-if="session.user">
                 Welcome, {{ session.user.name }}
-                (<a @click= "logout()">logout</a>)
+                (<a @click= "logout2()">logout</a>)
             </div>
             <div class="navbar-item" v-else>
                 <a class="button is-primary" @click="login">

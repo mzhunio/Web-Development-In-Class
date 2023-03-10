@@ -12,9 +12,6 @@ import { addToCart } from '@/model/cart';
         <h1 class="title">
             These will be the products
         </h1>
-        <h2 class="subtitle">
-            If you got here then you are logged in
-        </h2>
 
         <div class="product-list">
             <div class="product" v-for="product in products" :key="product.id">

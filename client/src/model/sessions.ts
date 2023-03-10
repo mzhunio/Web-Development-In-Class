@@ -27,9 +27,9 @@ export function useLogout() {
     const router = useRouter();
     
     return function() {
-    console.log(router);
-    session.user = null;
+        console.log(router);
+        session.user = null;
 
-    router.push("/login");
+        router.push("/login");
     }
 }
