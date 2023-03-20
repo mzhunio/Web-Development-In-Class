@@ -9,7 +9,7 @@ app
   .get('/', (req, res) => {
     res.send('Hello World! from Express')
   })
-  .use('products', products)
+  .use('/products', products)
 
 
 app.listen(port, () => 
