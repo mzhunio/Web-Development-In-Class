@@ -1,4 +1,5 @@
 const express = require('express')
+const path = require('path')
 const products = require('./controllers/products')
 const app = express()
 
@@ -6,6 +7,10 @@ const hostname = '127.0.0.1';
 const port = process.env.PORT || 3000;
 
 app
+  .use(express.json())
+  .use(express.static(path.join(__dirname, '../client/dist')))
+ 
+app  
   .get('/', (req, res) => {
     res.send('Hello World! from Express')
   })
