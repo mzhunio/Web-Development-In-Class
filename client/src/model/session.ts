@@ -35,7 +35,7 @@ export function api(url: string) {
             })
         })
         
-        .then(() => {
+        .finally(() => {
             session.isLoading = false;
         })
 }
