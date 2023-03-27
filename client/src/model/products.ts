@@ -1,4 +1,4 @@
-import { api } from "./myfetch";
+import { api } from "./sessions";
 export interface Product {
     id: number;
     title: string;
@@ -13,9 +13,6 @@ export interface Product {
     images: string[];
 }
 
-export function getProducts(): Product[] {
-    api('products').then(res => {
-        console.log(res);
-    })
-    return data.products;
+export function getProducts(): Promise<Product[]> {
+    return api('products');
 }

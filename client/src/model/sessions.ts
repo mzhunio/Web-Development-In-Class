@@ -1,6 +1,6 @@
 import { reactive } from "vue";
 import { useRouter } from "vue-router";
-
+import * as myFetch from "./myFetch";
 
 const session = reactive({
     user: null as User | null,
