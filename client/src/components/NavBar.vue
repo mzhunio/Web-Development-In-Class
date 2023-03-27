@@ -25,7 +25,7 @@ import LoginBadge from './LoginBadge.vue';
             <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="22" height="22" />
             
           </a>
-          <div class="navbar-burger" :class="{ 'is-active': isMenuActive }" @click="toggleMenu" >
+          <div class="navbar-burger" :class="{ 'is-active': isMenuActive }" @click="toggleMenu">
             <span></span>
             <span></span>
             <span></span>
