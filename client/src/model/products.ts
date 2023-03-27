@@ -1,4 +1,4 @@
-import { api } from "./sessions";
+import { api } from "./session";
 export interface Product {
     id: number;
     title: string;

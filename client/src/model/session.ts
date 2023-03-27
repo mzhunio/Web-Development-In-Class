@@ -39,6 +39,7 @@ export function useLogout() {
         router.push("/login");
     }
 }
+
 export function api(url: string) {
     session.isLoading = true;
     return myFetch.api(url)
@@ -49,7 +50,10 @@ export function api(url: string) {
                 type: "error",
             })
         })
-        .finally(() => {
+        
+        .then(() => {
             session.isLoading = false;
         })
 }
+
+

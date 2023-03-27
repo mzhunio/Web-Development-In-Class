@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { useSession, login, useLogout } from '@/model/sessions';
+import { useSession, login, useLogout } from '@/model/session';
 
 const session = useSession();
 const logout = useLogout();

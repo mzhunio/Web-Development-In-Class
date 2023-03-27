@@ -2,7 +2,7 @@ import { createRouter, createWebHistory, type NavigationGuardNext, type RouteLoc
 import HomeView from '../views/HomeView.vue'
 import ProductsVue from '@/views/Products.vue'
 import LoginVue from '@/views/Login.vue'
-import { useSession } from '@/model/sessions'
+import { useSession } from '@/model/session'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
