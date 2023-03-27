@@ -3,8 +3,6 @@ import { ref } from "vue";
 import { getProducts, type Product } from "../model/products";
 import { addToCart } from "@/model/cart";
 
-//ref([] as Product[]);
-
 const products = ref<Product[]>([]);
 
 getProducts().then((data) => {
@@ -15,10 +13,17 @@ getProducts().then((data) => {
 
 <template>
   <div>
-    <h1 class="title">These will be the products</h1>
+    <h1 class="title">TWhat would you like to buy?</h1>
 
     <div class="product-list">
-      <progress v-if="!products.length" class="progress is-large is-info" max="100">15%</progress>
+      <progress
+        v-if="!products.length"
+        class="progress is-large is-info"
+        max="100"
+      >
+        60%
+      </progress>
+
       <div class="product" v-for="product in products" :key="product.id">
         <img :src="product.thumbnail" :alt="product.title" />
         <h3>{{ product.title }}</h3>
