@@ -8,7 +8,7 @@ const session = reactive({
     isLoading: false,
     messages: [] as {
         msg: string,
-        type: "success" | "error" | "warning" | "info",
+        type: "success" | "danger" | "warning" | "info",
     }[],
 })
 
@@ -21,6 +21,12 @@ interface User {
 }
 
 export function useSession() {
+
+    session.messages.push({
+        msg: "Welcome to the App!",
+        type: "info",
+    })
+
     return session;
 }
 
@@ -31,7 +37,7 @@ export function api(url: string) {
             console.error(err);
             session.messages.push({
                 msg: err.message ?? JSON.stringify(err),
-                type: "error",
+                type: "danger",
             })
         })
         
@@ -56,3 +62,4 @@ export function useLogout() {
         router.push("/login");
     }
 }
+
