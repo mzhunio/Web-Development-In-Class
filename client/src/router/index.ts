@@ -15,7 +15,8 @@ const router = createRouter({
     {
       path: '/products',
       name: 'products',
-      component: ProductsVue
+      component: ProductsVue,
+      beforeEnter: secureRoute
     },
     {
       path: '/login',
