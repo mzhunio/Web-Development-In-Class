@@ -5,6 +5,7 @@ import { quantity } from '@/model/cart';
 import Cart from './Cart.vue';
 import Flyout from './Flyout.vue';
 import LoginBadge from './LoginBadge.vue';
+import Notifications from './Notifications.vue';
 
     const isMenuActive = ref(false);
     const isCartActive = ref(false);
@@ -74,6 +75,7 @@ import LoginBadge from './LoginBadge.vue';
           <div class="navbar-end">
             
             <div class="navbar-item">
+              <Notifications />
                 <button class="button  is-primary" :class="{ 'is-active': isCartActive }" @click="isCartActive = !isCartActive">
                     <span class="icon">
                         <i class="fas fa-shopping-cart"></i>
@@ -112,7 +114,7 @@ import LoginBadge from './LoginBadge.vue';
 
     <Flyout :class="{ 'is-active' : isCartActive }">
         <Cart />
-    </Flyout>/>
+    </Flyout>
 </template>
 
 

@@ -6,9 +6,8 @@ import { addToCart } from "@/model/cart";
 const products = ref<Product[]>([]);
 
 getProducts().then((data) => {
-  products.value = data;
+  products.value = data.data;
 });
-
 </script>
 
 <template>
@@ -49,12 +48,13 @@ getProducts().then((data) => {
 }
 
 .product {
-  width: 30rem;
-  padding: 1rem;
+  flex-basis: 12rem;
+  flex-grow: 1;
+  padding: 0.5rem;
   margin: 1rem;
   background-color: white;
   border-radius: 5px;
-  box-shadow: 0 0 5px 0 rgba(0, 0);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
 }
 
 .price {

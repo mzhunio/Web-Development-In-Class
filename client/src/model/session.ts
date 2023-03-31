@@ -21,12 +21,6 @@ interface User {
 }
 
 export function useSession() {
-
-    session.messages.push({
-        msg: "Welcome to the App!",
-        type: "info",
-    })
-
     return session;
 }
 
@@ -34,13 +28,12 @@ export function api(url: string) {
     session.isLoading = true;
     return myFetch.api(url)
         .catch(err => {
-            console.error(err);
+            console.error({err});
             session.messages.push({
-                msg: err.message ?? JSON.stringify(err),
+                msg: err.message  ?? JSON.stringify(err),
                 type: "danger",
             })
         })
-        
         .finally(() => {
             session.isLoading = false;
         })
@@ -62,4 +55,17 @@ export function useLogout() {
         router.push("/login");
     }
 }
+
+export function addMessage(msg: string, type: "success" | "danger" | "warning" | "info") {
+    console.log({msg, type});
+    session.messages.push({
+        msg,
+        type,
+    })
+}
+
+export function deleteMessage(index: number) {
+    session.messages.splice(index, 1);
+}
+
 
