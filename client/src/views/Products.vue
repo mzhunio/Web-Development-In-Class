@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { getProducts, type Product } from "../model/products";
-import { addToCart } from "@/model/cart";
+import { addToCart } from "../model/cart";
 
 const products = ref<Product[]>([]);
-
 getProducts().then((data) => {
   products.value = data.data;
 });
@@ -58,7 +57,7 @@ getProducts().then((data) => {
 }
 
 .price {
-  font-size: 1.5px;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 </style>
