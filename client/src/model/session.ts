@@ -44,7 +44,7 @@ export function api(url: string, data?: any, method?: string, headers?: any) {
 
 export function login() {
   session.user = {
-    name: "Michelle Zhunio",
+    name: "John Doe",
   };
 }
 

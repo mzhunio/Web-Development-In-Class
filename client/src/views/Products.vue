@@ -11,7 +11,7 @@ getProducts().then((data) => {
 
 <template>
   <div>
-    <h1 class="title">What would you like to buy?</h1>
+    <h1 class="title">TWhat would you like to buy?</h1>
 
     <div class="product-list">
       <progress
