@@ -1,8 +1,9 @@
-<script setup lang="ts" >
-import { useCart, total, removeFromCart } from '@/model/cart';
+<script setup lang="ts">
+    import { useCart, total, removeFromCart } from '@/model/cart';
 
     const cart = useCart();
 
+    
 </script>
 
 <template>
@@ -45,6 +46,7 @@ import { useCart, total, removeFromCart } from '@/model/cart';
         align-items: stretch;
     }
     .cart-item {
+
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -54,11 +56,13 @@ import { useCart, total, removeFromCart } from '@/model/cart';
         border-radius: 15px;
         overflow: hidden;
         background-color: lavenderblush;
+
     }
     .cart-item img {
         width: 100px;
         height: 100px;
     }
+
     small {
         font-size: 0.5em;
     }

@@ -3,6 +3,7 @@ import { ref } from "vue";
 import { useSession, deleteMessage } from "@/model/session";
 
 const session = useSession();
+
 const isActive = ref(false);
 </script>
 

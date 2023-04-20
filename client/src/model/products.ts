@@ -1,5 +1,6 @@
 /*  B"H
  */
+
 import type { DataEnvelope, DataListEnvelope } from "./myFetch";
 import { api } from "./session";
 
@@ -25,6 +26,8 @@ export function getProduct(id: number): Promise<DataEnvelope<Product>> {
   return api(`products/${id}`);
 }
 
-export function createProduct(product: Product): Promise<DataEnvelope<Product>> {
+export function createProduct(
+  product: Product
+): Promise<DataEnvelope<Product>> {
   return api("products", product);
 }

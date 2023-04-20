@@ -1,39 +1,33 @@
 <script setup lang="ts">
-const props = defineProps<{
-  title?: string;
-  isOpen: boolean;
-}>();
+import { ref } from "vue";
+import { useSession, useLogin, useLogout } from "@/model/session";
 
-const emit = defineEmits<{
-  (e: "update:isOpen", value: boolean): void;
-}>();
+const session = useSession();
+const logout = useLogout();
+const login = useLogin();
+
+function logout2() {
+  logout();
+}
 </script>
 
 <template>
-  <div class="modal" :class="{ 'is-active': props.isOpen }">
-    <div class="modal-background"></div>
-
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <slot name="header">
-          <p class="modal-card-title">{{ props.title }}</p>
-          <button
-            class="delete"
-            aria-label="close"
-            @click="emit('update:isOpen', false)"
-          ></button>
-        </slot>
-      </header>
-      <section class="modal-card-body">
-        <slot></slot>
-      </section>
-      <footer class="modal-card-foot">
-        <slot name="footer">
-          <button class="button is-success">Save changes</button>
-          <button class="button">Cancel</button>
-        </slot>
-      </footer>
-    </div>
+  <div class="navbar-item" v-if="session.user">
+    Welcome, {{ session.user.name }} (<a @click="logout2()">logout</a>)
+  </div>
+  <div class="navbar-item" v-else>
+    <a class="button is-primary" @click="login">
+      <span class="icon">
+        <i class="fas fa-user"></i>
+      </span>
+      <strong>Login</strong>
+    </a>
+    <a class="button is-info">
+      <span class="icon">
+        <i class="fas fa-user-plus"></i>
+      </span>
+      <strong>Sign up</strong>
+    </a>
   </div>
 </template>
 
