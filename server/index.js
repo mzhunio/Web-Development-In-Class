@@ -1,6 +1,8 @@
-require("dotenv").config();
-const express = require("express");
 const path = require("path");
+const express = require("express");
+
+require("dotenv").config({ path: path.resolve(process.cwd(), './server/.env') });
+
 const jokes = require("./controllers/jokes");
 const products = require("./controllers/products");
 const app = express();
