@@ -1,27 +1,29 @@
 {
-    "name": "web-development-in-class",
-    "version": "1.0.0",
-    "description": "",
-    "license": "BSD",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/mzhunio/Web-Development-In-Class.git"
-    },
-    "private": true,
-    "workspaces": [
-        "client"
-    ],
-    "scripts": {
-        "build": "npm i -ws && npm run build -ws",
-        "start": "node server/index.js",
-        "dev": "nodemon server/index.js -- watch server"
-    },
-    "dependencies": {
-        "dotenv": "^16.0.3",
-        "express": "^4.18.2",
-        "mongodb": "^5.3.0"
-    },
-    "devDependencies": {
-        "nodemon": "^2.0.20"
-    }
+  "name": "web-development-in-class",
+  "version": "1.0.0",
+  "description": "",
+  "license": "BSD",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mzhunio/Web-Development-In-Class.git"
+  },
+  "private": true,
+  "workspaces": [
+    "client"
+  ],
+  "scripts": {
+    "build": "npm i -ws && npm run build -ws",
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js -- watch server"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^9.0.0",
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongodb": "^5.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
