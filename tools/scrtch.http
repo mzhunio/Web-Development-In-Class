@@ -1,14 +1,15 @@
 ###
-GET http://localhost:3000/
+GET http://localhost:3070/
 
 ###
-GET http://localhost:3000/api/v1/products
+GET http://localhost:3070/api/v1/products?page=2&pageSize=30
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQ2Yzc5MDc3ZjczY2VhNWU0ODE4NmQiLCJuYW1lIjoiSm9obiBEb2UiLCJlbWFpbCI6ImpvaG5AZG9lLmNvbSIsInBob3RvIjoiaHR0cHM6Ly9yb2JvaGFzaC5vcmcvaGljdmVsZGljdGEucG5nP3NpemU9NTB4NTAmc2V0PXNldDEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2ODIzNjM2MjcsImV4cCI6MTY4MjQ1MDAyN30.ybb286CRlkT8sbL9Nii7FIgbbzhy3QatKlVXVUMwei8
 
 ###
-GET http://localhost:3000/api/v1/products/1
+GET http://localhost:3070/api/v1/products/64418de0f09282c0f7970ba7
 
 ###
-POST http://localhost:3000/api/v1/products
+POST http://localhost:3070/api/v1/products
 Content-Type: application/json
 some-other-header: with my very personal information
 
@@ -32,7 +33,36 @@ some-other-header: with my very personal information
 }
 
 ###
-DELETE http://localhost:3000/api/v1/products/1
+PATCH http://localhost:3070/api/v1/products
+Content-Type: application/json
+some-other-header: with my very personal information
+
+{
+    "_id": "64418ffa4925ec04c2c37dd0",
+  "title": "Brooklyn Bridge 2",
+  "price": 749
+}
 
 ###
-GET http://localhost:3000/api/v1/products/search/bridge
+DELETE http://localhost:3070/api/v1/products/64418de0f09282c0f7970ba7
+
+###
+GET http://localhost:3070/api/v1/products/search/bridge
+
+###
+POST http://localhost:3070/api/v1/products/seed
+
+###
+POST http://localhost:3070/api/v1/users/seed
+
+###
+GET http://localhost:3070/api/v1/users
+
+###
+POST http://localhost:3070/api/v1/users/login
+Content-Type: application/json
+
+{
+    "email": "john@doe.com",
+    "password": "123456"
+}
