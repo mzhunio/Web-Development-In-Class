@@ -1,6 +1,8 @@
 const { MongoClient, ObjectId  } = require('mongodb');
 
-const url = "mongodb+srv://chopify:123password@cluster0.8rysnbi.mongodb.net/?retryWrites=true&w=majority";;
+//console.log(process.env)
+
+const url = process.env.MONGO_URL ?? "";
 const DB_Name = process.env.MONGO_DB_NAME ?? 'chopify';
 
 const client = new MongoClient(url);
