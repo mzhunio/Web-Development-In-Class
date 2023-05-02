@@ -10,6 +10,11 @@
             If you got here then you are not logged in. <br>
             To login just click the button on the top right corner.
         </h2>
+        <p>
+            <button class="button is-primary" @click="">
+
+            </button>
+        </p>
     </div>
 </template>
 

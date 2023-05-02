@@ -4,6 +4,7 @@ import {
   type NavigationGuardNext,
   type RouteLocationNormalized,
 } from "vue-router";
+import StoreLocations from "@/views/StoreLocations.vue";
 import HomeView from "../views/HomeView.vue";
 import ProductsVue from "@/views/Products.vue";
 import LoginVue from "@/views/Login.vue";
@@ -47,6 +48,11 @@ const router = createRouter({
       name: "admin-products-edit",
       component: () => import("../views/admin/ProductEdit.vue"),
       beforeEnter: secureRoute,
+    },
+    {
+      path: "/storeLocations",
+      name: "store-locations",
+      component: StoreLocations,
     },
   ],
 });
