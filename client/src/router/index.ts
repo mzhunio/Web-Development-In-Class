@@ -1,14 +1,13 @@
+import { useSession } from "@/model/session";
+import LoginVue from "@/views/Login.vue";
+import ProductsVue from "@/views/Products.vue";
 import {
   createRouter,
   createWebHistory,
   type NavigationGuardNext,
   type RouteLocationNormalized,
 } from "vue-router";
-import StoreLocations from "@/views/StoreLocations.vue";
 import HomeView from "../views/HomeView.vue";
-import ProductsVue from "@/views/Products.vue";
-import LoginVue from "@/views/Login.vue";
-import { useSession } from "@/model/session";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -38,6 +37,11 @@ const router = createRouter({
       component: () => import("../views/AboutView.vue"),
     },
     {
+      path: "/storeLocations",
+      name: "store-locations",
+      component: () => import("../views/StoreLocations.vue"),
+    },
+    {
       path: "/admin/products",
       name: "admin-products",
       component: () => import("../views/admin/ProductsList.vue"),
@@ -48,11 +52,6 @@ const router = createRouter({
       name: "admin-products-edit",
       component: () => import("../views/admin/ProductEdit.vue"),
       beforeEnter: secureRoute,
-    },
-    {
-      path: "/storeLocations",
-      name: "store-locations",
-      component: StoreLocations,
     },
   ],
 });
